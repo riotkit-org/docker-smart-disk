@@ -18,3 +18,18 @@ Or invoke healthcheck manually:
 ```
 sudo docker exec smart /usr/bin/healthcheck.sh
 ```
+
+Docker Compose
+--------------
+
+```yaml
+version: "2"
+services:
+    hdd_health:
+        image: wolnosciowiec/docker-smart-disk:armhf
+        privileged: true
+        environment:
+            - DISK=/dev/sda
+        volumes:
+            - /dev/sda:/dev/sda:ro
+```
