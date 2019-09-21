@@ -12,7 +12,7 @@ build: ## Build and push (args: PUSH, ARCH, GIT_TAG)
 		DOCKER_TAG=${GIT_TAG}-${ARCH}; \
 	fi; \
 	\
-	${SUDO} docker build . -f ./Dockerfile.${ARCH} -t ${QUAY_REPO}:$${DOCKER_TAG}; \
+	${SUDO} docker build . -f ./${ARCH}.Dockerfile -t ${QUAY_REPO}:$${DOCKER_TAG}; \
 	${SUDO} docker tag ${QUAY_REPO}:$${DOCKER_TAG} ${QUAY_REPO}:$${DOCKER_TAG}-$$(date '+%Y-%m-%d'); \
 	\
 	if [[ "${PUSH}" == "true" ]]; then \
