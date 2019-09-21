@@ -2,6 +2,7 @@
 .SILENT:
 PUSH=true
 SUDO=sudo
+SHELL=/bin/bash
 
 build: ## Build and push (args: PUSH, ARCH, GIT_TAG)
 	set -e; DOCKER_TAG="lastest-dev-${ARCH}"; \
