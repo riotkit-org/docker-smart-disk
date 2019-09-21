@@ -5,7 +5,7 @@ SUDO=sudo
 SHELL=/bin/bash
 
 build: ## Build and push (args: PUSH, ARCH, GIT_TAG)
-	set -e; DOCKER_TAG="lastest-dev-${ARCH}"; \
+	set -e; DOCKER_TAG="latest-dev-${ARCH}"; \
 	\
 	if [[ "${GIT_TAG}" != '' ]]; then \
 		DOCKER_TAG=${GIT_TAG}-${ARCH}; \
